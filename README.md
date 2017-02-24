@@ -21,7 +21,7 @@ Both of you have to create an ID variable called "id" that goes from 1 to 1000 (
 3. Simulate a smoking variable ("smoke") that takes the following values: 0 (never), 1 (ex), 2 (current). This variable should depend on sex by using different probabilities for men (0.5, 0.3, 0.2) and women (0.6, 0.3, 0.1). Use the sample function.
 4. Your script should return a data frame called dataCategorical and include id, sex, ethnic, smoke
 
-**IMPORTANT NOTE FOR BOTH:** set the seed for the random number generation at the beginning of the script, so that the data set is reproducible.
+**IMPORTANT NOTE FOR BOTH:** set the seed (set.seed function) for the random number generation at the beginning of the script, so that the data set is reproducible.
 
 ## Step 2
 
@@ -30,7 +30,7 @@ Work together in the ch1_analysis.R script. You can divide the steps between eac
 1. Source the two scripts that you wrote using the source command (use the project directory as working directory, so that we don't have to change the path each time we run the script on a different machine). After this, you should see two data frames in the R environment.
 2. Merge the two data frames by id using the merge function.
 3. Change the type of the categorical variables to factor using the factor commands. Use the labels from the description of Step 1.
-4. Calculate descriptive statistics by sex using the summary and table/prop.table functions for continuous and categorical variables, respectively.
+4. Calculate descriptive statistics overall (e.g. summary function) and by sex (summary within a tapply) using the summary/tapply and table/prop.table functions for continuous and categorical variables, respectively.
     * Median (Q1-Q3) for continuous variables
     * Frequency (%) for categorical variables
 

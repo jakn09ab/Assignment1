@@ -11,4 +11,4 @@ set.seed(1)
 dataContinuous["age"] <- NA 
 dataContinuous$age <- runif(1000, min = 40, max = 70)
 dataContinuous["bmi"] <- NA
-dataContinuous$bmi <- ifelse(dataContinuous$gender==0, 21 + 0.1*dataContinuous$AGE + rnorm(1, 0 , 2), 20+0.15*dataContinuous$AGE + rnorm(1, 0 , 2.5))
+dataContinuous$bmi <- ifelse(dataContinuous$sex==0, 21 + 0.1*dataContinuous$age + rnorm(1, 0 , 2), 20 + 0.15*dataContinuous$age + rnorm(1, 0 , 2.5))

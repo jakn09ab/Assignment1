@@ -12,4 +12,4 @@ total <- merge(dataContinuous,dataCategorical="id")
 
 summary(total)
 #summary by sex
-tapply()
+tapply(total, )

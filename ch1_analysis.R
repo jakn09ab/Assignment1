@@ -13,23 +13,36 @@ total["sex"] <- total$sex.x
 total$sex.x <- NULL 
 total$sex.y <- NULL 
 
-#change type to factor
+#We could skip the prior step if we give the same name to the id and sex variables
+#I don't think so, they have the same name, but are merged only on ID, so it creates the .x and .y variants on the merge.
+
+#change numeric storage type to factor
+
 total$ethnic <- factor (total$ethnic,
                  levels = c(0, 1),
                  labels = c("non-white", "white"))
+
 total$sex <- factor (total$sex,
                         levels = c(0, 1),
                         labels = c("male", "female"))
 
 #make summary of continuous variables use tapply summary Calculate descriptive statistics overall (e.g. summary function) and by sex (summary within a tapply) using the summary/tapply and table/prop.table functions for continuous and categorical variables, respectively.
+
 #* Median (Q1-Q3) for continuous variables
 #* Frequency (%) for categorical variables
+
 summary(total)
 
-#summary by sex
+#Descriptive statistics stratified by sex
+
 tapply(total$age, total$sex, summary)
+
 tapply(total$bmi, total$sex, summary)
-tapply(total$ethnic, total$sex, table)
-tapply(total$smoke, total$sex, table)
+
+prop.table(table(total$sex, total$ethnic), margin = 1)
+
+prop.table(table(total$sex, total$smoke), margin = 1)
 
 tapply(total$age, total$sex, hist)
+
+

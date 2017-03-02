@@ -14,7 +14,6 @@ total$sex.x <- NULL
 total$sex.y <- NULL 
 
 #We could skip the prior step if we give the same name to the id and sex variables
-#I don't think so, they have the same name, but are merged only on ID, so it creates the .x and .y variants on the merge.
 
 #change numeric storage type to factor
 
